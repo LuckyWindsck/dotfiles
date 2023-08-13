@@ -6,3 +6,5 @@
 source $ZSH_CUSTOM/plugins/antigen.zsh
 source $ZSH_CUSTOM/plugins/history.zsh
 source $ZSH_CUSTOM/plugins/aliases.zsh
+source $ZSH_CUSTOM/plugins/keymaps.zsh
+
