@@ -33,4 +33,6 @@ export ANTIGEN_COMPDUMP=$XDG_CACHE_HOME/zsh/.zcompdump-antigen
 export plum_dir=$XDG_DATA_HOME/rime/plum
 
 # less
+LESS_HIST_DIR=$XDG_STATE_HOME/less
+[ -d $LESS_HIST_DIR ] || mkdir $LESS_HIST_DIR
 export LESSHISTFILE=$XDG_STATE_HOME/less/history
