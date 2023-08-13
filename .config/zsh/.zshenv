@@ -18,3 +18,5 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ### HomeBrew ###
 
 export ADOTDIR=$XDG_DATA_HOME/antigen
+ANTIGEN_CACHE_DIR=$XDG_CACHE_HOME/antigen
+export ANTIGEN_CACHE=$ANTIGEN_CACHE_DIR/init.zsh
