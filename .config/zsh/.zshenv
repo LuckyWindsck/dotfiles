@@ -16,3 +16,5 @@ export XDG_CACHE_HOME=$HOME/.cache/
 # Set shell env for HomeBrew according to the instruction after installation
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ### HomeBrew ###
+
+export ADOTDIR=$XDG_DATA_HOME/antigen
