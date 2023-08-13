@@ -4,20 +4,18 @@
 # 
 # Source: [Startup Files](https://zsh.sourceforge.io/Intro/intro_3.html)
 
-### XDG Base Directory Specification ###
-# Set environment variables for [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html)
+# XDG Base Directory Specification
+# See: [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html)
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
-### XDG Base Directory Specification ###
 
-### HomeBrew ###
+# HomeBrew
 # Set shell env for HomeBrew according to the instruction after installation
 eval "$(/opt/homebrew/bin/brew shellenv)"
-### HomeBrew ###
 
-### Antigen ###
+# Antigen
 # See: [Configuration](https://github.com/zsh-users/antigen/wiki/Configuration)
 export ADOTDIR=$XDG_DATA_HOME/antigen
 ANTIGEN_CACHE_DIR=$XDG_CACHE_HOME/antigen
@@ -26,4 +24,7 @@ export ANTIGEN_CACHE=$ANTIGEN_CACHE_DIR/init.zsh
 export ANTIGEN_LOG=$ANTIGEN_CACHE_DIR/antigen.log
 [ -d $XDG_CACHE_HOME/zsh ] || mkdir $XDG_CACHE_HOME/zsh
 export ANTIGEN_COMPDUMP=$XDG_CACHE_HOME/zsh/.zcompdump-antigen
-### Antigen ###
+
+# Rime
+# See: [plum](https://github.com/rime/plum#advanced-usage)
+export plum_dir=$XDG_DATA_HOME/rime/plum
