@@ -1,0 +1,2 @@
+# MAKE SURE TO SOURCE THIS FILE AFTER INSTALLING PLUGIN
+source $ZSH_CUSTOM/patches/zsh-autosuggestions.zsh
