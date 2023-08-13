@@ -116,6 +116,13 @@ setopt SHARE_HISTORY             # Share history between all sessions.
 setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
 ### HISTORY ###
 
+### Homebrew ###
+# See: [Configuring Homebrew Completions in zsh](https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)
+
+# We use antigen to load oh-my-zsh, and antigen will call compinit for us. In this case, we should add the following line before we use antigen.
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+### Homebrew ###
+
 ### Antigen ###
 source $(brew --prefix)/share/antigen/antigen.zsh
 
