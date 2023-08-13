@@ -31,3 +31,6 @@ export ANTIGEN_COMPDUMP=$XDG_CACHE_HOME/zsh/.zcompdump-antigen
 # Rime
 # See: [plum](https://github.com/rime/plum#advanced-usage)
 export plum_dir=$XDG_DATA_HOME/rime/plum
+
+# less
+export LESSHISTFILE=$XDG_STATE_HOME/less/history
