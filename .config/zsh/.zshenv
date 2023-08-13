@@ -8,3 +8,8 @@ export XDG_DATA_HOME=$HOME/.local/share/
 export XDG_CONFIG_HOME=$HOME/.config/
 export XDG_STATE_HOME=$HOME/.local/state/
 export XDG_CACHE_HOME=$HOME/.cache/
+
+### HomeBrew ###
+# Set shell env for HomeBrew according to the instruction after installation
+eval "$(/opt/homebrew/bin/brew shellenv)"
+### HomeBrew ###
