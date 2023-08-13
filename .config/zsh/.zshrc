@@ -148,8 +148,10 @@ antigen bundle copybuffer # press `^O` to copy buffer
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting # should be the last bundle. see: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#antigen
 
-# Load the theme.
-antigen theme robbyrussell
+# theme
+# See comment for loading custom theme in antigen
+# comment: [How can I have a custom theme without a public Git repo?](https://github.com/zsh-users/antigen/issues/523#issuecomment-296408835)
+antigen bundle $ZDOTDIR/themes sck.zsh-theme --no-local-clone
 
 antigen apply
 ### Antigen ###
