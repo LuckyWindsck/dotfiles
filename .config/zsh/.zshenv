@@ -11,14 +11,14 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
 
-# ZSH
+# zsh
 export ZSH_CUSTOM=$ZDOTDIR/custom
 
-# HomeBrew
+# homebrew
 # Set shell env for HomeBrew according to the instruction after installation
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Antigen
+# antigen
 # See: [Configuration](https://github.com/zsh-users/antigen/wiki/Configuration)
 export ADOTDIR=$XDG_DATA_HOME/antigen
 ANTIGEN_CACHE_DIR=$XDG_CACHE_HOME/antigen
@@ -28,7 +28,7 @@ export ANTIGEN_LOG=$ANTIGEN_CACHE_DIR/antigen.log
 [ -d $XDG_CACHE_HOME/zsh ] || mkdir $XDG_CACHE_HOME/zsh
 export ANTIGEN_COMPDUMP=$XDG_CACHE_HOME/zsh/.zcompdump-antigen
 
-# Rime
+# rime
 # See: [plum](https://github.com/rime/plum#advanced-usage)
 export plum_dir=$XDG_DATA_HOME/rime/plum
 
