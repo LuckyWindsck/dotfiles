@@ -55,6 +55,15 @@ export ZSH="$ZDOTDIR/ohmyzsh"
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
+### Uncomment this to fix the problem of buggy zsh-highlighting
+### Without this uncommenting, the function "expand-or-complete-with-dots" will not be
+### defined by oh-my-zsh, and this seems somehow trigger the problem that highlighting
+### will disappear in certain situation.
+### e.g. input "brew z", with Homebrew installed, "brew" should be displayed in green color,
+###      and "z" will be white. However, if user pressed [tab] key, all highlighted color
+###      will disappear.
+### See issue: [Syntax-highlighting of command will disappear after an unsuccessful completion](https://github.com/zsh-users/zsh-syntax-highlighting/issues/919)
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -137,6 +146,7 @@ antigen bundle copybuffer # press `^O` to copy buffer
 
 ## custom
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting # should be the last bundle. see: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#antigen
 
 # Load the theme.
 antigen theme robbyrussell
