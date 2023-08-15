@@ -13,7 +13,3 @@ pastefinish() {
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
-
-# clear suggestion of autosuggest after pasting
-# https://github.com/zsh-users/zsh-autosuggestions/issues/351
-ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste)

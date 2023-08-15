@@ -1,7 +1,4 @@
-# !! Note: make sure to run these commands before loading oh-my-zsh !!
-
-# Path to your oh-my-zsh installation.
-export ZSH="$ZDOTDIR/ohmyzsh"
+# !! Note: make sure to source this file before loading oh-my-zsh (applying antigen) !!
 
 # Fix bug of zsh-users/zsh-highlighting
 # See issue: [Syntax-highlighting of command will disappear after an unsuccessful completion](https://github.com/zsh-users/zsh-syntax-highlighting/issues/919)

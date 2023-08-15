@@ -3,8 +3,8 @@
 # 
 # Source: [Startup Files](https://zsh.sourceforge.io/Intro/intro_3.html)
 
-source $ZSH_CUSTOM/plugins/antigen.zsh
-source $ZSH_CUSTOM/plugins/history.zsh
-source $ZSH_CUSTOM/plugins/aliases.zsh
-source $ZSH_CUSTOM/plugins/keymaps.zsh
+source $ZSH_CUSTOM/plugins/antigen/setup.zsh
+source $ZSH_CUSTOM/plugins/zsh/aliases.zsh
+source $ZSH_CUSTOM/plugins/zsh/options.zsh
+source $ZSH_CUSTOM/plugins/zsh/key-bindings.zsh
 
