@@ -1,4 +1,4 @@
-# MAKE SURE TO PLACE THESE COMMANDS BEFORE LOADING OH MY ZSH
+# !! Note: make sure to run these commands before loading oh-my-zsh !!
 
 # Path to your oh-my-zsh installation.
 export ZSH="$ZDOTDIR/ohmyzsh"

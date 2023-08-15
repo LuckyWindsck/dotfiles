@@ -1,5 +1,5 @@
 # Before using antigen
-# MAKE SURE TO SOURCE THIS FILE
+# !! Note: make sure to source this file before using antigen !!
 source $ZSH_CUSTOM/plugins/antigen-pre.zsh
 
 # Antigen
@@ -26,4 +26,5 @@ antigen bundle $ZSH_CUSTOM/themes sck.zsh-theme --no-local-clone
 antigen apply
 
 # After applying antigen
+# !! Note: make sure to source this file after installing zsh plugins (after applying antigen) !!
 source $ZSH_CUSTOM/plugins/antigen-post.zsh

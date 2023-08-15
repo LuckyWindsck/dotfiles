@@ -1,3 +1,5 @@
+# Configuring zsh history options
+# See: https://zsh.sourceforge.io/Doc/Release/Options.html#History
 export HISTFILE=$XDG_STATE_HOME/zsh/history
 (( HISTSIZE = (2 ** 31) - 1 ))   # Number of history can be saved in memory
 (( SAVEHIST = (2 ** 31) - 1 ))   # Number of history can be saved in HISTFILE
