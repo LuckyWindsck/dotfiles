@@ -1,6 +1,15 @@
 # Load antigen
 source $(brew --prefix)/share/antigen/antigen.zsh
 
+for hook in $XDG_CONFIG_HOME/antigen/hooks/*
+do
+  source $hook
+done
+
+# Define hooks
+antigen-add-hook antigen-apply pre-apply-hook pre once
+antigen-add-hook antigen-apply post-apply-hook post once
+
 # Use oh-my-zsh
 antigen use oh-my-zsh
 

@@ -1,0 +1,8 @@
+# !! Note: make sure to source this hook function before applying antigen !!
+pre-apply-hook () {
+  # Before calling `compinit` => before applying antigen
+  source $ZSH_CUSTOM/plugins/homebrew/configurate-zsh-completions.zsh
+
+  # Before loading oh-my-zsh => before applying antigen
+  source $ZSH_CUSTOM/plugins/zsh-highlighting/patches/fix-disappeared-highlighting.zsh
+}

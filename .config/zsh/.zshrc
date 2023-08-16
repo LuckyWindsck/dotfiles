@@ -3,7 +3,7 @@
 # 
 # Source: [Startup Files](https://zsh.sourceforge.io/Intro/intro_3.html)
 
-source $ZSH_CUSTOM/plugins/antigen/setup.zsh
+source $XDG_CONFIG_HOME/antigen/.antigenrc
 source $ZSH_CUSTOM/plugins/zsh/aliases.zsh
 source $ZSH_CUSTOM/plugins/zsh/options.zsh
 source $ZSH_CUSTOM/plugins/zsh/key-bindings.zsh

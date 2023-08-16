@@ -1,0 +1,6 @@
+# !! Note: make sure to source this hook function after applying antigen !!
+post-apply-hook () {
+  # After applying plugin `zsh-autosuggestions` => after applying antigen
+  source $ZSH_CUSTOM/plugins/zsh-autosuggestions/patches/speed-up-pasting.zsh
+  source $ZSH_CUSTOM/plugins/zsh-autosuggestions/patches/clear-suggestion-after-pasting.zsh
+}
