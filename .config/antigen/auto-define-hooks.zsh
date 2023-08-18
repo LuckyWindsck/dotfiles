@@ -17,7 +17,7 @@
 #       1.3.2. "repeat" mode can call the hook function repeatly (more than once).
 #   2. define a function with name `${filename}-hook`
 #
-# An example hook is defined in $XDG_CONFIG_HOME/antigen/hooks/post-apply.once.sample
+# An example hook is defined in `$XDG_CONFIG_HOME/antigen/hooks/post-apply.once.sample`.`
 #
 # For more information of an antigen hook, check the source code of antigen, especially the function `antigen-add-hook`.
 
