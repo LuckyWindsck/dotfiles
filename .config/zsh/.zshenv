@@ -26,7 +26,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export ADOTDIR=$XDG_DATA_HOME/antigen
 ANTIGEN_CACHE_DIR=$XDG_CACHE_HOME/antigen
 [ -d $ANTIGEN_CACHE_DIR ] || mkdir $ANTIGEN_CACHE_DIR
-export ANTIGEN_CACHE=$ANTIGEN_CACHE_DIR/init.zsh
+export ANTIGEN_CACHE=false
 export ANTIGEN_LOG=$ANTIGEN_CACHE_DIR/antigen.log
 [ -d $XDG_CACHE_HOME/zsh ] || mkdir $XDG_CACHE_HOME/zsh
 export ANTIGEN_COMPDUMP=$XDG_CACHE_HOME/zsh/.zcompdump-antigen

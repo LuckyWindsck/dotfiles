@@ -9,9 +9,6 @@ source $XDG_CONFIG_HOME/antigen/auto-define-hooks.zsh
 antigen use oh-my-zsh
 
 # Bundle plugins
-## alias
-antigen bundle git
-
 ## other
 antigen bundle copybuffer # press `^O` to copy buffer 
 
@@ -26,3 +23,14 @@ antigen bundle $ZSH_CUSTOM/themes sck.zsh-theme --no-local-clone
 
 # Apply antigen
 antigen apply
+
+# It seems like that the `antigen-add-hook` function will only be source once due to the cache feature of antigen.
+# When I open a new interactive shell, zsh will warn that **"command not found: antigen-add-hook"**.
+# So I try to disable the cache feature by specifying `export ANTIGEN_CACHE=false` in `$ZDOTDIR/.zshenv`, but other issue occurs:
+# > See: [Disabling cache causes issue with git plugin](https://github.com/zsh-users/antigen/issues/676)
+#
+# I then follow the [workaround](https://github.com/zsh-users/antigen/issues/676#issuecomment-470303675) to fix the issue.
+# Although the [`antigen apply` docs](https://github.com/zsh-users/antigen/wiki/Commands#antigen-apply) suggest this is a bad idea for performance reasons, but currently there is the only workaround.
+
+## Bundle alias plugin
+antigen bundle git
