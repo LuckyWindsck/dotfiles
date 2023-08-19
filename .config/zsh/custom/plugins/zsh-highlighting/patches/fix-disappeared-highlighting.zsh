@@ -1,4 +1,4 @@
-# !! Note: make sure to source this file before loading oh-my-zsh (applying antigen) !!
+# !! Note: make sure to source this file before loading oh-my-zsh !!
 
 # Fix bug of zsh-users/zsh-highlighting
 # See issue: [Syntax-highlighting of command will disappear after an unsuccessful completion](https://github.com/zsh-users/zsh-syntax-highlighting/issues/919)

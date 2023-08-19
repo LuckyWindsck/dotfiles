@@ -11,25 +11,24 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
 
-# zsh
-export ZSH_CUSTOM=$ZDOTDIR/custom
-
 # oh-my-zsh
-export ZSH=$ZDOTDIR/ohmyzsh # Path to your oh-my-zsh installation.
+export ZSH=$ZDOTDIR/ohmyzsh
+export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
+export ZSH_CUSTOM=$ZDOTDIR/custom
+export ZSH_COMPDUMP=$ZSH_CACHE_DIR/.zcompdump
 
 # homebrew
 # Set shell env for HomeBrew according to the instruction after installation
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# antigen
-# See: [Configuration](https://github.com/zsh-users/antigen/wiki/Configuration)
-export ADOTDIR=$XDG_DATA_HOME/antigen
-ANTIGEN_CACHE_DIR=$XDG_CACHE_HOME/antigen
-[ -d $ANTIGEN_CACHE_DIR ] || mkdir $ANTIGEN_CACHE_DIR
-export ANTIGEN_CACHE=false
-export ANTIGEN_LOG=$ANTIGEN_CACHE_DIR/antigen.log
-[ -d $XDG_CACHE_HOME/zsh ] || mkdir $XDG_CACHE_HOME/zsh
-export ANTIGEN_COMPDUMP=$XDG_CACHE_HOME/zsh/.zcompdump-antigen
+# antidote
+for dir in {$XDG_DATA_HOME,$XDG_CONFIG_HOME,$XDG_CACHE_HOME}; do
+  mkdir -p $dir/antidote
+done
+# See: [Usage](https://getantidote.github.io/usage#cleanmymac-or-similar-tools)
+# See comment: https://github.com/mattmc3/antidote/issues/129#issuecomment-1565834910
+export ANTIDOTE_HOME=$XDG_CACHE_HOME/antidote
+
 
 # rime
 # See: [plum](https://github.com/rime/plum#advanced-usage)

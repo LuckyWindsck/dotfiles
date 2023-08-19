@@ -1,0 +1,31 @@
+# Before loading oh-my-zsh
+$ZSH_CUSTOM/plugins/homebrew/configurate-zsh-completions.zsh
+$ZSH_CUSTOM/plugins/zsh-highlighting/patches/fix-disappeared-highlighting.zsh
+
+# Source oh-my-zsh lib
+$ZSH/oh-my-zsh.sh
+
+# Load theme
+$ZSH_CUSTOM/themes/sck.zsh-theme
+
+# Load oh-my-zsh plugins that does not deal with zsh completion system.
+#
+# For plugins that deal with zsh completion system, we need to:
+# 1. Add plugins to `$fpath`
+# 2. Run `compinit`
+# 3. Source plugins
+# 
+# But since the following plugins has no matter with zsh completion system, we just need to source them without add then into `$fpath`.`
+$ZSH path:plugins/git/git.plugin.zsh
+$ZSH path:plugins/copybuffer/copybuffer.plugin.zsh # press `^O` to copy buffer 
+
+# Load other plugins
+zsh-users/zsh-autosuggestions
+
+# After loading plugin `zsh-users/zsh-autosuggestions`
+$ZSH_CUSTOM/plugins/zsh-autosuggestions/patches/speed-up-pasting.zsh
+$ZSH_CUSTOM/plugins/zsh-autosuggestions/patches/clear-suggestion-after-pasting.zsh
+
+# MUST be the last plugin sourced
+# See: [With a plugin manager](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#with-a-plugin-manager)
+zsh-users/zsh-syntax-highlighting kind:defer

@@ -1,7 +1,0 @@
-# Example antigen hook
-#
-# !! Note: make sure to source this hook function after applying antigen !!
-post-apply-hook () {
-  # List currently loaded plugins, only once.
-  antigen list
-}
