@@ -25,4 +25,3 @@ alias mkdir="mkdir -p"
 
 # -i: prompt before overwriting
 alias mv="mv -i"
-

@@ -2,7 +2,7 @@
 # Tested on MacOS under ANSI colors.
 # It is recommended to use with a dark background.
 # Colors: blue, cyan, red, green, white, yellow
-# 
+#
 # Aug 2023 LuckyWindsck
 # modified from `ys` theme by Yad Smood
 
@@ -24,7 +24,7 @@ sck_zsh_theme () {
   local SCK_THEME_GIT_INFO='$(git_prompt_info)'
   local SCK_THEME_TIME="%{$fg[white]%}[%*]"
   local SCK_THEME_LAST_EXIT_CODE="%(?,,EXIT_CODE:%{$fg[red]%}%?%{$reset_color%})"
-  
+
   # Second Line
   local SCK_THEME_CHAR="%{$terminfo[bold]$fg[red]%}› %{$reset_color%}"
 
