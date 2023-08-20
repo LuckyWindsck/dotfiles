@@ -14,19 +14,23 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}o"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 
 sck_zsh_theme () {
-  local SHARP="%{$terminfo[bold]$fg[blue]%}#%{$reset_color%}"
-  local USER="%{$fg[cyan]%}%n"
-  local HEART="%{$fg[red]%}❤"
-  local MACHINE="%{$fg[green]%}%m"
-  local IN="%{$fg[white]%}in"
-  local DIRECTORY="%{$fg[yellow]%}%~%{$reset_color%}"
-  local GIT_INFO='$(git_prompt_info)'
-  local TIME="%{$fg[white]%}[%*]"
-  local LAST_EXIT_CODE="%(?,,EXIT_CODE:%{$fg[red]%}%?%{$reset_color%})"
-  local CHAR="%{$terminfo[bold]$fg[red]%}› %{$reset_color%}"
+  # First line
+  local SCK_THEME_SHARP="%{$terminfo[bold]$fg[blue]%}#%{$reset_color%}"
+  local SCK_THEME_USER="%{$fg[cyan]%}%n"
+  local SCK_THEME_HEART="%{$fg[red]%}❤"
+  local SCK_THEME_MACHINE="%{$fg[green]%}%m"
+  local SCK_THEME_IN="%{$fg[white]%}in"
+  local SCK_THEME_DIRECTORY="%{$fg[yellow]%}%~%{$reset_color%}"
+  local SCK_THEME_GIT_INFO='$(git_prompt_info)'
+  local SCK_THEME_TIME="%{$fg[white]%}[%*]"
+  local SCK_THEME_LAST_EXIT_CODE="%(?,,EXIT_CODE:%{$fg[red]%}%?%{$reset_color%})"
+  
+  # Second Line
+  local SCK_THEME_CHAR="%{$terminfo[bold]$fg[red]%}› %{$reset_color%}"
 
-  echo $SHARP $USER $HEART $MACHINE $IN $DIRECTORY $GIT_INFO $TIME $LAST_EXIT_CODE
-  echo $CHAR
+  # Prompt
+  echo $SCK_THEME_SHARP $SCK_THEME_USER $SCK_THEME_HEART $SCK_THEME_MACHINE $SCK_THEME_IN $SCK_THEME_DIRECTORY $SCK_THEME_GIT_INFO $SCK_THEME_TIME $SCK_THEME_LAST_EXIT_CODE
+  echo $SCK_THEME_CHAR
 }
 
 # Prompt format:
