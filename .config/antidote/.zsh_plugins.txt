@@ -28,4 +28,5 @@ $ZSH_CUSTOM/plugins/zsh-autosuggestions/patches/clear-suggestion-after-pasting.z
 
 # MUST be the last plugin sourced
 # See: [With a plugin manager](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#with-a-plugin-manager)
+# See: [Why must `zsh-syntax-highlighting.zsh` be sourced at the end of the `.zshrc` file?](https://github.com/zsh-users/zsh-syntax-highlighting/tree/master#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file)
 zsh-users/zsh-syntax-highlighting
