@@ -3,7 +3,7 @@ $ZSH_CUSTOM/plugins/homebrew/configurate-zsh-completions.zsh
 $ZSH_CUSTOM/plugins/zsh-highlighting/patches/fix-disappeared-highlighting.zsh
 
 # Source oh-my-zsh lib
-$ZSH/oh-my-zsh.sh
+$ZSH_CUSTOM/plugins/ohmyzsh/oh-my-zsh.zsh
 
 # Load theme
 $ZSH_CUSTOM/themes/sck.zsh-theme
@@ -14,10 +14,10 @@ $ZSH_CUSTOM/themes/sck.zsh-theme
 # 1. Add plugins to `$fpath`
 # 2. Run `compinit`
 # 3. Source plugins
-# 
+#
 # But since the following plugins has no matter with zsh completion system, we just need to source them without add then into `$fpath`.`
 $ZSH path:plugins/git/git.plugin.zsh
-$ZSH path:plugins/copybuffer/copybuffer.plugin.zsh # press `^O` to copy buffer 
+$ZSH path:plugins/copybuffer/copybuffer.plugin.zsh # press `^O` to copy buffer
 
 # Load other plugins
 zsh-users/zsh-autosuggestions
