@@ -3,33 +3,38 @@
 # It is recommended to use with a dark background.
 # Colors: blue, cyan, red, green, white, yellow
 # 
-# Mar 2023 LuckyWindsck
+# Aug 2023 LuckyWindsck
 # modified from `ys` theme by Yad Smood
 
-PROMPT_SHARP="%{$terminfo[bold]$fg[blue]%}#%{$reset_color%}"
-PROMPT_USER="%{$fg[cyan]%}%n"
-PROMPT_HEART="%{$fg[red]%}❤"
-PROMPT_MACHINE="%{$fg[green]%}%m"
-PROMPT_IN="%{$fg[white]%}in"
-PROMPT_DIRECTORY="%{$fg[yellow]%}%~%{$reset_color%}"
-PROMPT_TIME="%{$fg[white]%}[%*]"
-PROMPT_LAST_EXIT_CODE="%(?,,EXIT_CODE:%{$fg[red]%}%?%{$reset_color%})"
-PROMPT_CHAR="%{$terminfo[bold]$fg[red]%}› %{$reset_color%}"
-
-# Git info
-local git_info='$(git_prompt_info)'
-ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[white]%}on%{$reset_color%} %{$fg[cyan]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+# Set variables used in `git_prompt_info` function
+# See: `ohmyzsh/lib/git.zsh` for definition of `git_prompt_info` and usage of these variables
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%}on%{$reset_color%} %{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}x"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}o"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+
+sck_zsh_theme () {
+  local SHARP="%{$terminfo[bold]$fg[blue]%}#%{$reset_color%}"
+  local USER="%{$fg[cyan]%}%n"
+  local HEART="%{$fg[red]%}❤"
+  local MACHINE="%{$fg[green]%}%m"
+  local IN="%{$fg[white]%}in"
+  local DIRECTORY="%{$fg[yellow]%}%~%{$reset_color%}"
+  local GIT_INFO='$(git_prompt_info)'
+  local TIME="%{$fg[white]%}[%*]"
+  local LAST_EXIT_CODE="%(?,,EXIT_CODE:%{$fg[red]%}%?%{$reset_color%})"
+  local CHAR="%{$terminfo[bold]$fg[red]%}› %{$reset_color%}"
+
+  echo $SHARP $USER $HEART $MACHINE $IN $DIRECTORY $GIT_INFO $TIME $LAST_EXIT_CODE
+  echo $CHAR
+}
 
 # Prompt format:
-# # USER @ MACHINE in DIRECTORY on BRANCH STATE [TIME] EXIT_CODE:LAST_EXIT_CODE
+# # USER ❤ MACHINE in DIRECTORY on BRANCH STATE [TIME] EXIT_CODE:LAST_EXIT_CODE
 # › COMMAND
 #
 # For example:
-# # luckywind @ sck in ~/.oh-my-zsh on master x [21:47:42] EXIT_CODE:0
+# # luckywind ❤ sck in ~/.oh-my-zsh on main x [21:47:42] EXIT_CODE:1
 # ›
 
-PROMPT="${PROMPT_SHARP} ${PROMPT_USER} ${PROMPT_HEART} ${PROMPT_MACHINE} ${PROMPT_IN} ${PROMPT_DIRECTORY}${git_info} ${PROMPT_TIME} ${PROMPT_LAST_EXIT_CODE}
-${PROMPT_CHAR}"
+PROMPT=$(sck_zsh_theme)
