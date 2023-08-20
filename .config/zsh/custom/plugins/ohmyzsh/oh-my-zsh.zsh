@@ -1,13 +1,4 @@
-# Migrate from loading entire `$ZSH/oh-my-zsh.sh` to using necessary features only.
-# See comment: [How do I use Oh-My-Zsh with antidote?](https://github.com/mattmc3/antidote/discussions/70#discussioncomment-6775215)
-
 # Before initializing Oh My Zsh
-
-# 1. Protect against non-zsh execution of Oh My Zsh (use POSIX syntax here)
-# Unnecessary, because we source this file via `.zshrc`.
-
-# 2. Define $ZSH, $ZSH_CACHE_DIR, and make sure $ZSH_CACHE_DIR exists
-# Unnecessary, because we set these variables in `.zshenv` and `mkdir $ZSH_CACHE_DIR` to ensure it exists.
 
 # 3. Create `$ZSH_CACHE_DIR/completions` directory and add to `$fpath`
 # TODO: check if this is necessary.
@@ -20,8 +11,7 @@ _init_completion_cache () {
 _init_completion_cache
 
 # 4. Auto update Oh My Zsh
-# TODO: consider whether to enable or not.
-# source "$ZSH/tools/check_for_upgrade.sh"
+source $ZSH/tools/check_for_upgrade.sh
 
 # ---------- #
 
@@ -35,12 +25,6 @@ _init_completion_cache
 _init_completion_system () {
   # 2.1. Autoload functions that will be called below
   autoload -U compaudit compinit zrecompile
-
-  # 2.2. Define `$ZSH_CUSTOM`
-  # Unnecessary, we set it in `.zshenv`.
-
-  # 2.3. Add all defined plugins to `$fpath`, before running `compinit`
-  # Unnecessary, because we use `antidote` to manage plugins.
 
   # 2.4. Call `compinit` & `zrecompile`
   # Figure out the SHORT hostname
@@ -149,11 +133,6 @@ for config_file ("$ZSH"/lib/*.zsh); do
   source $config_file
 done
 unset config_file
-
-# 3.3. Source plugins
-# 3.4. Source custom configs
-# 3.5. Source theme
-# Unnecessary, because we use `antidote` to manage plugins, configs, and theme.
 
 # 4. Set completion colors to be the same as `ls`, after theme has been loaded
 [[ -z "$LS_COLORS" ]] || zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
