@@ -1,6 +1,7 @@
-#! bin/zsh
-# Shebang for VSCode syntax highlighting
+#!bin/zsh
 
+# The path to the directory which contains antidote hooks.
+ANTIDOTE_HOOK_DIR=$XDG_CONFIG_HOME/antidote/hooks
 # The name of the bundle file antidote use to load plugins.
 ANTIGEN_BUNDLE_FILE=$XDG_CONFIG_HOME/antidote/.zsh_plugins.txt
 # The name of the static file antidote will generate.
@@ -28,6 +29,14 @@ autoload -Uz $fpath[-1]/antidote
 if [[ ! $ANTIGEN_STATIC_FILE -nt $ANTIGEN_BUNDLE_FILE ]]; then
   antidote bundle < $ANTIGEN_BUNDLE_FILE >| $ANTIGEN_STATIC_FILE
 fi
+
+# BEFORE sourcing static plugins file
+# Load pre / post hook functions
+# `(N)` means to set the `NULL_GLOB` option for the current pattern, so unmatched pattern will be deleted.
+for ANTIDOTE_HOOK_FILE ($ANTIDOTE_HOOK_DIR/*/{custom,plugin}(::|::*::){pre,post}-hook.zsh(N)); do
+  source $ANTIDOTE_HOOK_FILE
+done
+unset ANTIDOTE_HOOK_FILE
 
 # Source the static plugins file.
 source $ANTIGEN_STATIC_FILE

@@ -4,15 +4,8 @@
 # UNCOMMENT the following line to create `$ZSH_CACHE_DIR/completions` directory and add to `$fpath`.
 # $ZSH_CUSTOM/plugins/ohmyzsh/init-completion-cache.zsh
 
-# BEFORE calling `compinit`
-# Add plugins that use `$fpath` for their completions
-$ZSH_CUSTOM/plugins/homebrew/configurate-zsh-completions.zsh
-
 # NOW, use a plugin that runs compinit for you to initialize your completions
-$ZSH_CUSTOM/plugins/ohmyzsh/init-completion-system.zsh
-
-# Before loading Oh My Zsh `lib/completion.zsh`
-$ZSH_CUSTOM/plugins/zsh-highlighting/patches/fix-disappeared-highlighting.zsh
+$ZSH_CUSTOM/plugins/ohmyzsh/init-completion-system.zsh pre:_set-completion-fpath
 
 # Before loading Oh My Zsh libs, plugins, themes
 # Auto update Oh My Zsh
@@ -23,6 +16,7 @@ $ZSH/lib/bzr.zsh
 $ZSH/lib/cli.zsh
 $ZSH/lib/clipboard.zsh
 $ZSH/lib/compfix.zsh
+$ZSH/lib/completion.zsh pre:_set-completion-wating-dots
 $ZSH/lib/completion.zsh
 $ZSH/lib/correction.zsh
 $ZSH/lib/diagnostics.zsh
@@ -45,11 +39,7 @@ $ZSH/plugins/git/git.plugin.zsh
 
 # Load other plugins
 $ZSH/plugins/copybuffer/copybuffer.plugin.zsh # press `^O` to copy buffer
-zsh-users/zsh-autosuggestions
-
-# AFTER loading plugin `zsh-users/zsh-autosuggestions`
-$ZSH_CUSTOM/plugins/zsh-autosuggestions/patches/speed-up-pasting.zsh
-$ZSH_CUSTOM/plugins/zsh-autosuggestions/patches/clear-suggestion-after-pasting.zsh
+zsh-users/zsh-autosuggestions post:_fix-zsh-autosuggestions
 
 # Load theme
 $ZSH_CUSTOM/themes/sck.zsh-theme
@@ -59,6 +49,5 @@ $ZSH_CUSTOM/themes/sck.zsh-theme
 $ZSH_CUSTOM/plugins/ohmyzsh/set-completion-colors.zsh
 
 # MUST be the last plugin sourced
-# See: [With a plugin manager](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#with-a-plugin-manager)
 # See: [Why must `zsh-syntax-highlighting.zsh` be sourced at the end of the `.zshrc` file?](https://github.com/zsh-users/zsh-syntax-highlighting/tree/master#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file)
 zsh-users/zsh-syntax-highlighting

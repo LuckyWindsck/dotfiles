@@ -1,4 +1,4 @@
-# !! Note: make sure to source this file before loading oh-my-zsh !!
+# !! Note: make sure to set this function as pre-hook for the Oh My Zsh "completion" lib !!
 
 # Fix bug of zsh-users/zsh-highlighting
 # See issue: [Syntax-highlighting of command will disappear after an unsuccessful completion](https://github.com/zsh-users/zsh-syntax-highlighting/issues/919)
@@ -10,4 +10,6 @@
 # Example situation:
 # If you type "brew z" in the terminal with Homebrew installed, normally "brew" should appear in green color and "z" should be white.
 # However, if you press the [tab] key, all highlighted colors will disappear.
-COMPLETION_WAITING_DOTS="true"
+_set-completion-wating-dots () {
+  COMPLETION_WAITING_DOTS="true"
+}
