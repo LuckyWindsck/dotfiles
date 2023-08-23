@@ -30,8 +30,19 @@ if [[ ! $ANTIGEN_STATIC_FILE -nt $ANTIGEN_BUNDLE_FILE ]]; then
   antidote bundle < $ANTIGEN_BUNDLE_FILE >| $ANTIGEN_STATIC_FILE
 fi
 
-# BEFORE sourcing static plugins file
-# Load pre / post hook functions
+# Load pre / post hook functions BEFORE sourcing static plugins file
+#
+# Hook rules:
+# 1. Hook should be placed in the directory `$ANTIDOTE_HOOK_DIR/[PLUGIN_NAME]`.
+#    e.g. `$ANTIDOTE_HOOK_DIR/zsh-autosuggestions` for plugin `zsh-users/zsh-autosuggestions`
+# 2. If PLUGIN_NAME is duplicated, use `@[NAME_SPACE]` to distinguish each other.
+#    e.g. `completion@foo` for plugin `foo/completion`, and `completion@bar` for plugin `bar/completion`
+# 3. Hook should have file name in the either one of the following format:
+#    - `plugin::{pre,post}-hook.zsh`
+#    - `plugin::path@to@plugin::{pre,post}-hook.zsh`
+#    - `custom::name-of-custom-plugin::{pre,post}-hook.zsh`
+# 4. Hook function should be named descriptively
+#
 # `(N)` means to set the `NULL_GLOB` option for the current pattern, so unmatched pattern will be deleted.
 for ANTIDOTE_HOOK_FILE ($ANTIDOTE_HOOK_DIR/*/{custom,plugin}(::|::*::){pre,post}-hook.zsh(N)); do
   source $ANTIDOTE_HOOK_FILE
