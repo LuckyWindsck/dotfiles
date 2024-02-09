@@ -17,7 +17,6 @@ $ZSH/lib/cli.zsh
 $ZSH/lib/clipboard.zsh
 $ZSH/lib/compfix.zsh
 $ZSH/lib/completion.zsh pre:_set-completion-wating-dots
-$ZSH/lib/completion.zsh
 $ZSH/lib/correction.zsh
 $ZSH/lib/diagnostics.zsh
 $ZSH/lib/directories.zsh
