@@ -3,14 +3,14 @@
 # The path to the directory which contains antidote hooks.
 ANTIDOTE_HOOK_DIR=$XDG_CONFIG_HOME/antidote/hooks
 # The name of the bundle file antidote use to load plugins.
-ANTIGEN_BUNDLE_FILE=$XDG_CONFIG_HOME/antidote/.zsh_plugins.txt
+ANTIDOTE_BUNDLE_FILE=$XDG_CONFIG_HOME/antidote/.zsh_plugins.txt
 # The name of the static file antidote will generate.
-ANTIGEN_STATIC_FILE=$XDG_DATA_HOME/antidote/.zsh_plugins.zsh
+ANTIDOTE_STATIC_FILE=$XDG_DATA_HOME/antidote/.zsh_plugins.zsh
 
 # Override defualt bundle / static file
 # See: `man antidote-load`
-zstyle ':antidote:bundle' file $ANTIGEN_BUNDLE_FILE
-zstyle ':antidote:static' file $ANTIGEN_STATIC_FILE
+zstyle ':antidote:bundle' file $ANTIDOTE_BUNDLE_FILE
+zstyle ':antidote:static' file $ANTIDOTE_STATIC_FILE
 
 # Use a more friendly name for plugin cache directories
 # See: https://getantidote.github.io/options#friendly-names
@@ -19,15 +19,15 @@ zstyle ':antidote:bundle' use-friendly-names 'yes'
 # Ensure we have a bundle file where we can add plugins.
 # Only create the file if it does not exist.
 # Otherwise, antidote bundle will always be executed according to the condition we write.
-[[ -f $ANTIGEN_BUNDLE_FILE ]] || touch $ANTIGEN_BUNDLE_FILE
+[[ -f $ANTIDOTE_BUNDLE_FILE ]] || touch $ANTIDOTE_BUNDLE_FILE
 
 # Lazy-load antidote.
 fpath+=($(brew --prefix)/opt/antidote/share/antidote/functions)
 autoload -Uz $fpath[-1]/antidote
 
 # Generate static file in a subshell when bundle file is updated.
-if [[ ! $ANTIGEN_STATIC_FILE -nt $ANTIGEN_BUNDLE_FILE ]]; then
-  antidote bundle < $ANTIGEN_BUNDLE_FILE >| $ANTIGEN_STATIC_FILE
+if [[ ! $ANTIDOTE_STATIC_FILE -nt $ANTIDOTE_BUNDLE_FILE ]]; then
+  antidote bundle < $ANTIDOTE_BUNDLE_FILE >| $ANTIDOTE_STATIC_FILE
 fi
 
 # Load pre / post hook functions BEFORE sourcing static plugins file
@@ -50,4 +50,4 @@ done
 unset ANTIDOTE_HOOK_FILE
 
 # Source the static plugins file.
-source $ANTIGEN_STATIC_FILE
+source $ANTIDOTE_STATIC_FILE
