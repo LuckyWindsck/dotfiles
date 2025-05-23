@@ -34,6 +34,9 @@ mkdir -p {$XDG_DATA_HOME,$XDG_CONFIG_HOME,$XDG_CACHE_HOME}/antidote
 # See comment: https://github.com/mattmc3/antidote/issues/129#issuecomment-1565834910
 export ANTIDOTE_HOME=$XDG_CACHE_HOME/antidote
 
+# vim
+mkdir -p $XDG_STATE_HOME/vim
+
 # rime
 # This is where we clone repo, so we don't need to `mkdir`.
 # See: [plum](https://github.com/rime/plum#advanced-usage)
