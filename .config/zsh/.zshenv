@@ -6,6 +6,9 @@
 
 # !! Note: make sure to `mkdir` when necessary !!
 
+# Locale
+export LANG=en_US.UTF-8
+
 # XDG Base Directory Specification
 # See: [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html)
 export XDG_DATA_HOME=$HOME/.local/share
