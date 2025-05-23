@@ -47,5 +47,9 @@ mkdir -p $XDG_STATE_HOME/less
 # See: `man less`
 export LESSHISTFILE=$XDG_STATE_HOME/less/history
 
+# Node.js
+mkdir -p $XDG_STATE_HOME/node
+export NODE_REPL_HISTORY=$XDG_STATE_HOME/node/node_repl_history
+
 # Docker
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
