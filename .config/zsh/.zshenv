@@ -46,3 +46,6 @@ export plum_dir=$XDG_DATA_HOME/rime/plum
 mkdir -p $XDG_STATE_HOME/less
 # See: `man less`
 export LESSHISTFILE=$XDG_STATE_HOME/less/history
+
+# Docker
+export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
