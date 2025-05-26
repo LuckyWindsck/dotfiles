@@ -5,5 +5,6 @@
 
 source $XDG_CONFIG_HOME/antidote/.antidoterc
 source $ZSH_CUSTOM/plugins/zsh/aliases.zsh
+# !! Note: NEVER COMMENT NEXT LINE OUT. options.zsh contains HISTORY-related setting. !!
 source $ZSH_CUSTOM/plugins/zsh/options.zsh
 source $ZSH_CUSTOM/plugins/zsh/key-bindings.zsh
