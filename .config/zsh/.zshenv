@@ -42,10 +42,11 @@ mkdir -p $XDG_STATE_HOME/vim
 # See: [plum](https://github.com/rime/plum#advanced-usage)
 export plum_dir=$XDG_DATA_HOME/rime/plum
 
-# less
+# less (See: `man less`)
 mkdir -p $XDG_STATE_HOME/less
-# See: `man less`
 export LESSHISTFILE=$XDG_STATE_HOME/less/history
+# --no-init: to disable deinitialization string that clearing the screen
+export LESS='--RAW-CONTROL-CHARS --no-init --quit-if-one-screen'
 
 # Node.js
 mkdir -p $XDG_STATE_HOME/node
