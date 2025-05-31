@@ -61,3 +61,14 @@ export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 
 # Docker
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
+
+### PATH ###
+
+# The following command will prepend PATH, so make sure to execute them in correct order (FILO)
+
+# homebrew
+# Set shell env for HomeBrew according to the instruction after installation.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# mise
+eval "$(mise activate zsh)"
