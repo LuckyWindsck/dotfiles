@@ -52,6 +52,9 @@ export LESS='--RAW-CONTROL-CHARS --no-init --quit-if-one-screen'
 mkdir -p $XDG_STATE_HOME/node
 export NODE_REPL_HISTORY=$XDG_STATE_HOME/node/node_repl_history
 
+# npm
+export NPM_CONFIG_CACHE=$XDG_CACHE_HOME/npm
+
 # Rust
 export CARGO_HOME=$XDG_DATA_HOME/cargo
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
